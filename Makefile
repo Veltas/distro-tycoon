@@ -10,7 +10,7 @@ all: bin/distro-tycoon
 bin/distro-tycoon: $(OBJS) $(LIBS) | bin
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-obj/main.o: src/main.cpp | obj
+obj/%.o: src/%.cpp | obj
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 bin bin/tests obj obj/tests:
