@@ -1,11 +1,10 @@
 #include <gtkmm.h>
-#include <experimental/optional>
 #include <iostream>
 
 #include "get_DPI_scale.hpp"
 #include "defs.hpp"
 
-std::experimental::optional<float> g_DPI_scale;
+#include "helloworld.hpp"
 
 int main(int argc, char* argv[])
 {
@@ -15,8 +14,7 @@ int main(int argc, char* argv[])
 
   auto app = Gtk::Application::create(argc, argv, "veltas.distrotycoon");
 
-  Gtk::Window window;
-  window.set_default_size(200, 200);
+  Hello_world helloworld;
 
-  return app->run(window);
+  return app->run(helloworld);
 }
