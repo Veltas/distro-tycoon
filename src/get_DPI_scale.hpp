@@ -1,0 +1,6 @@
+#ifndef GET_DPI_SCALE_HPP_INCLUDED
+#define GET_DPI_SCALE_HPP_INCLUDED
+
+float get_DPI_scale();
+
+#endif // GET_DPI_SCALE_HPP_INCLUDED
