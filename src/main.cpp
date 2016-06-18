@@ -1,4 +1,4 @@
-#include <gtkmm.h>
+#include <gtkmm/application.h>
 #include <iostream>
 
 #include "get_DPI_scale.hpp"
