@@ -12,7 +12,7 @@ public:
 protected:
   void on_button_clicked();
 
-  Gtk::Button m_button;
+  Gtk::Button m_button{"_Hello", true};
 };
 
 #endif // HELLOWORLD_HPP_INCLUDED

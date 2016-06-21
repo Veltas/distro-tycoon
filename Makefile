@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = $(shell pkg-config --cflags gtkmm-3.0) -std=c++1y -Wall -W -pedantic -Ofast
+CXXFLAGS = $(shell pkg-config --cflags gtkmm-3.0) -std=c++1y -Wall -W -pedantic -g
 MY_LIBS = $(shell pkg-config --libs gtkmm-3.0) -lX11
 
 MY_OBJS = $(patsubst src/%.cpp,obj/%.o,$(wildcard src/*.cpp))
@@ -22,6 +22,3 @@ bin/tests: | bin
 .PHONY: clean
 clean:
 	rm -rf bin/ obj/
-
-test: -lcairomm
-	echo $^

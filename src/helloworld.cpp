@@ -2,10 +2,9 @@
 #include "defs.hpp"
 #include <iostream>
 
-Hello_world::Hello_world() :
-  m_button("Hello, world")
+Hello_world::Hello_world()
 {
-  set_border_width(*g_DPI_scale * 10);
+  set_border_width((int)(*g_DPI_scale * 10));
 
   m_button.signal_clicked().connect(
     sigc::mem_fun(*this, &Hello_world::on_button_clicked)
