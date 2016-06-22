@@ -46,13 +46,12 @@ namespace {
 
 int main(int argc, char* argv[])
 {
-  auto app = Gtk::Application::create("veltas.distrotycoon");
-
   init_globals();
 
   Program_mode program_mode = Program_mode::start_menu;
   bool running = true;
   while (running) {
+    auto app = Gtk::Application::create("veltas.distrotycoon");
     try {
       switch (program_mode) {
         case Program_mode::start_menu: {
