@@ -50,8 +50,8 @@ int main(int argc, char* argv[])
   Program_mode program_mode = Program_mode::start_menu;
   bool running = true;
   while (running) {
-    auto app = Gtk::Application::create("veltas.distrotycoon");
     try {
+      auto app = Gtk::Application::create("veltas.distrotycoon");
       switch (program_mode) {
         case Program_mode::start_menu: {
           Start_menu_window start_menu_window;
@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
           Load_game_window load_game_window;
           app->run(load_game_window);
           program_mode = load_game_window.get_next_mode();
-          */
+          // */
           throw std::runtime_error("Not implemented");
         } break;
         case Program_mode::playing: {
@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
           Playing_window playing;
           app->run(playing);
           program_mode = playing.get_next_mode();
-          */
+          // */
           throw std::runtime_error("Not implemented");
         } break;
         case Program_mode::end: {
@@ -87,7 +87,6 @@ int main(int argc, char* argv[])
       };
       message_dialog.set_secondary_text(std::string{"Error: "} + e.what());
       message_dialog.run();
-      app->release();
       return EXIT_FAILURE;
     }
   }
