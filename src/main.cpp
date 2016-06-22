@@ -13,7 +13,6 @@
 #include "get_DPI_scale.hpp"
 #include "defs.hpp"
 
-#include "helloworld.hpp"
 #include "Program_mode.hpp"
 #include "Start_menu_window.hpp"
 
