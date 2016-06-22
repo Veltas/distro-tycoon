@@ -21,7 +21,7 @@ Start_menu_window::Start_menu_window()
   m_box.pack_start(m_banner, Gtk::PACK_EXPAND_PADDING, *g_DPI_scale * 2);
 
   for (std::size_t i = 0; i < m_buttons.size(); ++i) {
-    m_buttons[i].signal_clicked().connect([i, this]{ on_button_clicked((Button_enum)i); });
+    m_buttons[i].signal_clicked().connect([&, i]{ on_button_clicked((Button_enum)i); });
     m_box.pack_start(m_buttons[i], Gtk::PACK_EXPAND_PADDING, *g_DPI_scale * 2);
     m_buttons[i].show();
   }
