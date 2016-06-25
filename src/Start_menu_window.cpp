@@ -12,21 +12,25 @@ Start_menu_window::Start_menu_window()
   m_buttons.emplace_back("About");
   m_buttons.emplace_back("Quit");
 
-  set_title("Distro Tycoon");
+  m_banner.set_markup("<tt><span variant=\"smallcaps\" size=\"x-large\">Distro Tycoon</span></tt>");
 
+  set_title("Distro Tycoon");
   set_border_width(*g_DPI_scale * 20);
 
-  add(m_box);
+  add(m_top_box);
+  m_top_box.set_homogeneous(false);
 
-  m_box.pack_start(m_banner, Gtk::PACK_EXPAND_PADDING, *g_DPI_scale * 2);
+  m_top_box.pack_start(m_banner, Gtk::PACK_EXPAND_PADDING, *g_DPI_scale * 2);
 
   for (std::size_t i = 0; i < m_buttons.size(); ++i) {
-    m_buttons[i].signal_clicked().connect([&, i]{ on_button_clicked((Button_enum)i); });
-    m_box.pack_start(m_buttons[i], Gtk::PACK_EXPAND_PADDING, *g_DPI_scale * 2);
+    m_buttons[i].signal_clicked().connect([&, i]{ on_button_clicked(static_cast<Button_enum>(i)); });
+    m_top_box.pack_start(m_buttons[i], Gtk::PACK_EXPAND_PADDING, *g_DPI_scale * 2);
     m_buttons[i].show();
   }
 
-  m_box.show();
+  m_top_box.show();
+
+  show_all_children();
 }
 
 void Start_menu_window::on_button_clicked(Button_enum button_enum)

@@ -32,9 +32,9 @@ protected:
 
   void on_button_clicked(Button_enum button_enum);
 
-  Gtk::Box m_box{Gtk::ORIENTATION_VERTICAL, static_cast<int>(*g_DPI_scale * 5)};
+  Gtk::Box m_top_box{Gtk::ORIENTATION_VERTICAL, static_cast<int>(*g_DPI_scale * 5)};
 
-  Gtk::Label m_banner{"<span varient='smallcaps' size='x-large'>Distro Tycoon</span>"};
+  Gtk::Label m_banner;
 
   std::deque<Gtk::Button> m_buttons;
 };

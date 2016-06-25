@@ -4,6 +4,7 @@
 #include "Package_type.hpp"
 
 #include <string>
+#include <stdexcept>
 
 class Dev_model {
   Package_type m_affinity;
@@ -22,7 +23,13 @@ public:
   Package_type get_affinity() const { return m_affinity; }
 
   int get_age() const { return m_age; }
-  void set_age(int new_age) { m_age = new_age; }
+  void set_age(int new_age)
+  {
+    if (new_age < 0 || new_age > 130) {
+      throw std::logic_error(std::string("Age ") + new_age + " too high");
+    }
+    m_age = new_age;
+  }
 
   int get_exp() const { return m_exp; }
   void set_exp(int new_exp) { m_exp = new_exp; }
