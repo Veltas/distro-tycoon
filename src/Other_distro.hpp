@@ -5,8 +5,8 @@
 #include <cstdint>
 
 struct Other_distro {
-  std::string name;
-  std::int_fast64_t user_count;
+	std::string name;
+	std::int_fast64_t user_count;
 };
 
 #endif // OTHER_DISTRO_HPP_INCLUDED

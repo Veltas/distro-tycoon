@@ -6,11 +6,11 @@
 
 float get_DPI_scale()
 {
-  Display* display = XOpenDisplay(nullptr);
-  const int width = XDisplayWidth(display, 0);
-  const int widthMM = XDisplayWidthMM(display, 0);
-  XCloseDisplay(display);
-  return width/(92*0.0393700787402f*widthMM);
+	Display* display = XOpenDisplay(nullptr);
+	const int width = XDisplayWidth(display, 0);
+	const int widthMM = XDisplayWidthMM(display, 0);
+	XCloseDisplay(display);
+	return width/(92*0.0393700787402f*widthMM);
 }
 
 #else
