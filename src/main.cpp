@@ -2,7 +2,7 @@
 #include <gtkmm/messagedialog.h>
 #include <iostream>
 #include <iterator>
-#include <fstream>
+#include "Strict_input_file_stream.hpp"
 #include <chrono>
 #include <cstdlib>
 #include <cassert>
@@ -21,11 +21,11 @@ namespace {
 	{
 		using Input_it = std::istream_iterator<std::string>;
 		{
-			std::ifstream input_stream(FIRSTNAMES);
+			Strict_input_file_stream input_stream(FIRSTNAMES);
 			g_firstnames.emplace(Input_it{input_stream}, Input_it{});
 		}
 		{
-			std::ifstream input_stream(LASTNAMES);
+			Strict_input_file_stream input_stream(LASTNAMES);
 			g_lastnames.emplace(Input_it{input_stream}, Input_it{});
 		}
 	}
